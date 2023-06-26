@@ -1,0 +1,48 @@
+<!-- templates/tasktracker/tasks.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Task List</h1>
+    <form method="POST" action="{% url 'tasktracker:delete_tasks' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Select</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Deadline</th>
+                <th>Created At</th>
+            </tr>
+            {% for task in tasks %}
+                <tr>
+                    <td><input type="checkbox" name="selected_tasks" value="{{ task.id }}"></td>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.deadline }}</td>
+                    <td>{{ task.created_at }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No current tasks.</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <button type="submit">Delete Selected</button>
+    </form>
+</body>
+</html>

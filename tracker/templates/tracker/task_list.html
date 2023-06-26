@@ -1,8 +1,34 @@
-<ul>
-    {% for task in tasks %}
-      <li>{{ task.title }}</li>
-    {% empty %}
-      <li>No tasks found.</li>
-    {% endfor %}
-  </ul>
-  
+<!-- templates/tasktracker/task_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Task</title>
+</head>
+<body>
+    <h1>Create New Task</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <label for="deadline_date">Deadline (date):</label><br>
+        <input type="date" id="deadline_date" name="deadline_date" placeholder="dd.mm.yyyy"><br><br>
+
+        <label for="deadline_time">Deadline (time):</label><br>
+        <input type="time" id="deadline_time" name="deadline_time"><br><br>
+
+        <input type="submit" value="Ok">
+    </form>
+    <h2>All tasks:</h2>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }}</li>
+        {% empty %}
+            <li>No tasks found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
