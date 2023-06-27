@@ -1,0 +1,86 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Стили для кнопки "Перейти к списку задач" */
+a.button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #338899;
+}
+
+/* Стили для кнопки "Удалить выбранные" */
+button[type="submit"].delete-button {
+    background-color: #FF0000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"].delete-button:hover {
+    background-color: #CC0000;
+}
+/* Стили для формы */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Стили для списков */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}

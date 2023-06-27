@@ -1,20 +1,9 @@
-<!-- templates/tasktracker/tasks.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Task List</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
     <h1>Current Task List</h1>
@@ -42,7 +31,8 @@
                 </tr>
             {% endfor %}
         </table>
-        <button type="submit">Delete Selected</button>
+        <button type="submit" class="button delete-button">Delete Selected</button>
     </form>
+    <a href="{% url 'tasktracker:task-list' %}" class="button">Create new task</a>
 </body>
 </html>

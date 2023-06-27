@@ -1,8 +1,9 @@
-<!-- templates/tasktracker/task_list.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Create Task</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
     <h1>Create New Task</h1>
@@ -20,7 +21,7 @@
         <label for="deadline_time">Deadline (time):</label><br>
         <input type="time" id="deadline_time" name="deadline_time"><br><br>
 
-        <input type="submit" value="Ok">
+        <input type="submit" value="Ok" class="button">
     </form>
     <h2>All tasks:</h2>
     <ul>
@@ -30,5 +31,6 @@
             <li>No tasks found.</li>
         {% endfor %}
     </ul>
+    <a href="{% url 'tasktracker:tasks' %}" class="button">View all tasks</a>
 </body>
 </html>

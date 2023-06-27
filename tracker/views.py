@@ -29,7 +29,7 @@ def task_list_view(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('task-list')
+            return redirect('tasktracker:tasks')
     
     else:
         form = TaskForm()
